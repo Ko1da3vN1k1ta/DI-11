@@ -1,0 +1,19 @@
+﻿<Page x:Class="DI_11.DoElement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DI_11"
+        mc:Ignorable="d"
+       d:DesignHeight="70" d:DesignWidth="333"
+      Title="DoElement" Background="Black">
+    <Border BorderBrush="#FF000000" BorderThickness="2" CornerRadius="10">
+        <Grid  Background="#363299">
+            <TextBlock Foreground="White" x:Name="NameTask" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">Task</TextBlock>
+            <Button x:Name="NextButton" HorizontalAlignment="Right" Width="70" Margin="0,12,10,35" Click="Button_Click" Content="&gt;"/>
+            <Button x:Name="BackButton" HorizontalAlignment="Right" Width="70" Margin="0,37,10,10" Content="&lt;" Click="BackButton_Click"/>
+            <Button HorizontalAlignment="Left" Width="70" Height="30" Margin="178,2,0,34" Click="Button_Click_1">Инфо.</Button>
+            <Button HorizontalAlignment="Left" Width="70" Height="30" Margin="178,33,0,3" Click="Button_Click_2">Удал.</Button>
+        </Grid>
+    </Border>
+</Page>
