@@ -37,7 +37,7 @@ namespace DI_11
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                SqlCommand sql = new SqlCommand("select Id from Users where Login = '" + LoginTextBox.Text + "' and Password = '" + PasswordBox.Text + "';", conn); 
+                SqlCommand sql = new SqlCommand("select Id from Users where Login = '" + LoginTextBox.Text + "' and Password = '" + PasswordBox.Password + "';", conn); 
                 SqlDataReader reader = sql.ExecuteReader();
                 if (reader.Read())
                 {
@@ -58,7 +58,13 @@ namespace DI_11
             private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
             string login = LoginTextBox.Text;
-            string password = PasswordBox.Text;
+            string password = PasswordBox.Password;
+
+            if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Пожалуйста, заполните все поля.");
+                return;
+            }
 
             try
             {
@@ -76,7 +82,7 @@ namespace DI_11
                     }
                     else
                     {
-                        SqlCommand cmd = new SqlCommand("INSERT INTO Users ( Login, Password) VALUES (@login, @password)", conn);
+                        SqlCommand cmd = new SqlCommand("INSERT INTO Users (Login, Password) VALUES (@login, @password)", conn);
                         cmd.Parameters.AddWithValue("@login", login);
                         cmd.Parameters.AddWithValue("@password", password);
 
@@ -84,7 +90,6 @@ namespace DI_11
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Регистрация прошла успешно!");
-                           
                         }
                         else
                         {

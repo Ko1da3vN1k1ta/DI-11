@@ -29,7 +29,7 @@
 
             <TextBlock Grid.Row="2" Grid.Column="0" 
                    Text="Пароль" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, 0, 10, 0"/>
-            <TextBox x:Name="PasswordBox" Grid.Row="2" Grid.Column="1" Width="200" Margin="0, 0, 0, 10"/>
+            <PasswordBox x:Name="PasswordBox" Grid.Row="2" Grid.Column="1" Width="200" Margin="0, 0, 0, 10"/>
 
             <Button Grid.Row="3" Grid.Column="0" Content="Вход в систему" Width="150" Height="40" Background="#1E90FF" Foreground="White" Margin="0, 20, 10, 0" Click="LoginButton_Click"/>
             <Button Grid.Row="3" Grid.Column="1" Content="Выход" Width="150" Height="40" Background="#DA1717" Foreground="White" Margin="10, 20, 0, 0" Click="ExitButton_Click"/>
